@@ -1,0 +1,38 @@
+---
+layout: default
+---
+<header class="hero-section animate-in">
+  <h1>Wawasan Baru Setiap Hari</h1>
+  <p>Jelajahi artikel pilihan seputar pengembangan web dan desain modern.</p>
+</header>
+
+<div class="post-grid animate-in">
+  {% for post in site.posts %}
+  <article class="post-card">
+    <div class="card-image" style="background-image: url('{{ post.image | default: "https://images.unsplash.com/photo-1498050108023-c5249f4df085" }}');"></div>
+    
+    <div class="card-content">
+      {% if post.categories %}
+        <span class="card-category">{{ post.categories | first }}</span>
+      {% endif %}
+      
+      <h2 class="card-title">
+        <a href="{{ post.url | relative_url }}">{{ post.title }}</a>
+      </h2>
+      
+      <p class="card-excerpt">
+        {{ post.excerpt | strip_html | truncatewords: 15 }}
+      </p>
+      
+      <div class="card-footer">
+        <span>
+          <i class="fa-regular fa-clock"></i> {{ post.date | date: "%d %b %Y" }}
+        </span>
+        <a href="{{ post.url | relative_url }}" class="read-more">
+          Baca <i class="fa-solid fa-arrow-right"></i>
+        </a>
+      </div>
+    </div>
+  </article>
+  {% endfor %}
+</div>

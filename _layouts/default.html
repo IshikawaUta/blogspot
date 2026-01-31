@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  {% seo %}
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
+</head>
+<body>
+  <div id="loader">
+    <div class="spinner"></div>
+  </div>
+
+  <nav class="navbar glass-effect">
+    <div class="nav-container">
+      <a class="nav-logo" href="{{ '/' | relative_url }}">
+        <div class="logo-icon"><i class="fa-solid fa-bolt"></i></div>
+        <span>{{ site.title }}</span>
+      </a>
+      
+      <div class="nav-right">
+        <div class="nav-menu">
+          <a href="{{ '/' | relative_url }}" class="nav-link">Beranda</a>
+        </div>
+        
+        <button id="dark-mode-toggle" class="theme-toggle" title="Ganti Tema">
+          <i class="fa-solid fa-moon moon-icon"></i>
+          <i class="fa-solid fa-sun sun-icon"></i>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container">
+    {{ content }}
+  </main>
+
+  {% include footer.html %}
+
+  <script>
+    // Loading Screen Script
+    window.addEventListener('load', () => {
+      const loader = document.getElementById('loader');
+      loader.style.opacity = '0';
+      setTimeout(() => { loader.style.display = 'none'; }, 500);
+    });
+
+    // Dark Mode Logic
+    const toggleButton = document.querySelector('#dark-mode-toggle');
+    const currentTheme = localStorage.getItem('theme');
+
+    if (currentTheme) {
+      document.documentElement.setAttribute('data-theme', currentTheme);
+    }
+
+    if (toggleButton) {
+      toggleButton.addEventListener('click', () => {
+        let theme = document.documentElement.getAttribute('data-theme');
+        if (theme === 'dark') {
+          document.documentElement.setAttribute('data-theme', 'light');
+          localStorage.setItem('theme', 'light');
+        } else {
+          document.documentElement.setAttribute('data-theme', 'dark');
+          localStorage.setItem('theme', 'dark');
+        }
+      });
+    }
+  </script>
+</body>
+</html>

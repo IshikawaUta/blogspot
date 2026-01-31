@@ -1,0 +1,25 @@
+title: Modern Creative Blog
+email: admin@creative.com
+description: >-
+  Blogspot Jelajahi artikel pilihan seputar pengembangan web dan desain modern.
+baseurl: "/blogspot" 
+url: "http://ishikawauta.github.io"
+author: Admin Kreatif
+
+# Plugins
+plugins:
+  - jekyll-admin
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - node_modules
+  - vendor
+
+liquid:
+  profile: false
+
+future: true
