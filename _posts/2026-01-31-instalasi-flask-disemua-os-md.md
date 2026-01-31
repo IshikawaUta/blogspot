@@ -1,5 +1,5 @@
 ---
-title: 2026-01-31-instalasi-laravel-disemua-os.md
+title: 2026-01-31-instalasi-flask-disemua-os.md
 layout: post
 date: '2026-01-31 12:39:08'
 categories:
