@@ -1,7 +1,33 @@
-paths:
-  static: ''
-  uploads: uploads
-timezone: Asia/Bangkok
-markdown:
-  engine: commonmark
-  options: {}
+# Konfigurasi Utama
+source: /
+timezone: Asia/Jakarta
+
+# Mengelompokkan artikel agar muncul di dashboard
+collections_config:
+  posts:
+    path: _posts
+    output: true
+    name: Artikel
+    icon: article
+    _enabled_editors:
+      - visual
+      - content
+
+# Pengaturan input agar mudah saat menulis artikel baru
+_inputs:
+  image:
+    type: image
+    comment: Pilih gambar utama artikel
+  author:
+    type: text
+  categories:
+    type: multiselect
+    options:
+      values:
+        - Web Design
+        - Programming
+        - Tutorial
+
+# Lokasi penyimpanan gambar saat diunggah lewat editor
+uploads:
+  dest: assets/images
