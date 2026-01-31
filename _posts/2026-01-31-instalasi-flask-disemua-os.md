@@ -1,7 +1,7 @@
 ---
-title: 2026-01-31-instalasi-flask-disemua-os.md
+title: Panduan Lengkap Instalasi Flask di Windows, macOS, dan Linux
 layout: post
-date: '2026-01-31 12:39:08'
+date: 2026-01-31T12:39:08+07:00
 categories:
   - Tutorial
 image: https://images.unsplash.com/photo-1498050108023-c5249f4df085
